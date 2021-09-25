@@ -1,0 +1,12 @@
+<div>
+    {{#each posts}}
+    <a href="/dashboard/edit/{{id}}">
+        <p>
+            {{title}}
+        </p>
+        <p>
+            {{format_date createdAt}}
+        </p>
+    </a>
+    {{/each}}
+</div>
