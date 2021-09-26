@@ -19,10 +19,13 @@
                     <li class="nav-item">
                         <a class="nav-link" href="/dashboard">Dashboard</a>
                     </li>
+                    {{#if logged_in}}
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Logout</a>
+                        <a class="nav-link" id="logout" href="#">Logout</a>
                     </li>
-
+                    {{else}}
+                    <a href="/login">Login</a>
+                    {{/if}}
                 </ul>
             </div>
         </nav>
@@ -33,7 +36,8 @@
     </main>
 
     <footer> handle this!</footer>
+
 </body>
 
 </html>
-{{!-- used with authfefe and login --}}
+{{!-- used with authfefe --}}
