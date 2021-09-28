@@ -1,5 +1,4 @@
 // edit post and delete on edit-post
-
 const editFormHandler = async function(event) {
     event.preventDefault();
 
@@ -15,6 +14,7 @@ const editFormHandler = async function(event) {
 };
 
 const deleteFormHandler = async function(event) {
+    event.preventDefault();
     await fetch(`/api/post/${postId}`, {
         method: 'DELETE',
     });

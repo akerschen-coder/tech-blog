@@ -1,9 +1,11 @@
 // require all logic from other pages 
 const router = require('express').Router();
-const userRoutes = require('./userRoutes');
-const projectRoutes = require('./projectRoutes');
+const userRoutes = require('./user-route');
+const postRoutes = require('./post-route');
+
 
 router.use('/users', userRoutes);
-router.use('/projects', projectRoutes);
+router.use('/posts', postRoutes);
+
 
 module.exports = router;
