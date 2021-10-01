@@ -9,12 +9,11 @@ router.get('/', withAuth, async (req, res) => {
       where: {
         userId: req.session.userId
       }
-
     });
-
-    const posts = postData.map((post) => post.get({ plain: true }));
+    const  posts = postData.map((post) => post.get({ plain: true }));
 
     res.render('admin-post', {
+      layout: 'dashboard',
       posts,
     });
   } catch (err) {
@@ -23,9 +22,9 @@ router.get('/', withAuth, async (req, res) => {
 });
 
 // get the new post views? 
-router.get('/new-post', withAuth, (req, res) => {
+router.get('/new', withAuth, (req, res) => {
   res.render('new-post', {
-    layout: "dashboard",
+    layout: 'dashboard',
   });
 });
 
@@ -34,7 +33,7 @@ router.get('/edit/:id', withAuth, async (req, res) => {
   try {
     const postData = await Post.findByPk(req.params.id); 
     if (postData) {
-      const posts = postData.map((post) => post.get({ plain: true }));
+      const posts = postData.get({ plain: true });
       res.render('edit-post', {
         layout: 'dashboard',
         posts,

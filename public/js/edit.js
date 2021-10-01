@@ -21,7 +21,7 @@ const deleteFormHandler = async function(event) {
     document.location.replace('/dashboard');
 }
 
-document.querySelector('.editBtn').addEventListener('submit', editFormHandler);
+document.querySelector('#editPost').addEventListener('submit', editFormHandler);
 
-document.querySelector('.deleteBtn').addEventListener('submit', deleteFormHandler); 
+document.querySelector('.deleteBtn').addEventListener('click', deleteFormHandler); 
 
