@@ -20,6 +20,7 @@ router.post('/', async (req, res) => {
       res.status(400).json(err);
     }
   });
+  
   //login
   router.post('/login', async (req, res) => {
     try {

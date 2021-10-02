@@ -33,7 +33,7 @@ router.get('/', async (req, res) => {
     } catch (err) {
         res.status(500).json(err);
     }
-});
+}); 
 
 //for single posts 
 router.get('/post/:id', async (req, res) => {
